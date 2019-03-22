@@ -147,6 +147,20 @@ public class GameBoard {
 		}
 		return rtn; 
 	}
+	
+	public String printStones() {
+		String rtn = "";
+		for( int i=0; i < TOTAL_PITS; i++) {			
+			for(int j=0; j < pits.get(i).countStones(); j++) {
+				rtn = rtn.concat("<img src= 'images/roundstone.png' "  
+				      +  " class='stone' "
+				      +  " onclick='pick(" + i +")' "  
+				      +  " style='left: " + ((pits.get(i).getXPosition() * PIT_SIZE) + PIT_SIZE + (j%3 * 10) + 30) + "px; "
+				     	 	  + " top: "  + ((pits.get(i).getYPosition() * PIT_SIZE) + (j/3 * 10) + 30 ) + "px;'> \n"); 
+			}
+		}
+		return rtn;
+	}
 
 	
 	

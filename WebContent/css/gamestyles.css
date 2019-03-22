@@ -20,3 +20,9 @@ img.gameBoard {
 	left: 100px;
 	
 }
+
+img.stone {
+	width: 10px;
+	height: 10px;
+	position: absolute;
+}

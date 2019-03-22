@@ -75,6 +75,7 @@ public class GameServlet extends HttpServlet {
 		"		<input type='hidden' id='command' name='command' value='pick'/> \n" +
 		game.getGameBoard().print() +
 		game.getGameBoard().printPits() +
+		game.getGameBoard().printStones() +
 		"		<input type='submit' value='Reset Game' onclick='resetGame()'> \n" +
 		"	</form> \n" +
 		"</body> \n" +
