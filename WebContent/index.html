@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<script src="js/gamescripts.js"></script>
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Mancala Game</title>
+</head>
+<body>
+	Welcome to Mancala Game!
+	<BR>
+	<form name="formGameBoard"  id="formGameBoard" method="post" action="GameServlet">
+		<input type="hidden" id="pitnumber" name="pitnumber" value="0"/> 
+		<input type="hidden" id="command" name="command" value="pick"/>
+		<img src="images/woodHole.jpg" onclick="pick('1')"> 
+		<img src="images/woodHole.jpg" onclick="pick('2')">
+		<input type="submit" onclick="resetGame()">
+	</form>
+</body>
+</html>
+
