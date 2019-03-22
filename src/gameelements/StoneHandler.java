@@ -22,7 +22,17 @@ public class StoneHandler extends GameObject {
 	public void addStone() {
 		stones++;
 	}
-	
+
+	public void addStones(int s) {
+		stones+=s;
+	}
+
+	public void dropStone() {
+		stones--;
+		if (stones < 0 )
+			stones = 0;
+	}
+
 	public Integer getAllStones() {
 		Integer temp_stones = stones;
 		stones = 0;

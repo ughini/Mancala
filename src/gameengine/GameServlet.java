@@ -15,7 +15,6 @@ public class GameServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private GameHandler game;
-    private int globalpitnumber = 0;  
 
     public GameServlet() {
     	super();
@@ -50,7 +49,9 @@ public class GameServlet extends HttpServlet {
 	}
 	
 	private void handlePick(int number) {		
-		this.globalpitnumber = number;
+		if (!game.getGameBoard().emptySide()) {
+			game.clickPit(number);
+		}
 	}
 	
 	private void handleReset() {
@@ -67,7 +68,7 @@ public class GameServlet extends HttpServlet {
 		"<title>Mancala Game</title> \n" +
 		"</head> \n" +
 		"<body> \n" +
-		"	Welcome to Mancala Game! \n" +
+		game.getMessage() + "\n" +
 		"	<BR> \n" +
 		"	<form name='formGameBoard'  id='formGameBoard' method='post' action='GameServlet'> \n" +
 		"		<input type='hidden' id='pitnumber' name='pitnumber' value='0'/>  \n" +
@@ -76,7 +77,6 @@ public class GameServlet extends HttpServlet {
 		game.getGameBoard().printPits() +
 		"		<input type='submit' value='Reset Game' onclick='resetGame()'> \n" +
 		"	</form> \n" +
-		"   You Picked Pit " + globalpitnumber +
 		"</body> \n" +
 		"</html> \n"
 		;
